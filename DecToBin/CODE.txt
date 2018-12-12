@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace testing_code
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num; //number that gets inputted
+            int div; //gives n the next row. 14-7-3-1
+            string str = ""; //making empty string to hold unorded binary form
+            string bin = ""; //making empty string 
+
+            Console.Write("Give me a number to convert to Binary: ");
+            num = int.Parse(Console.ReadLine()); //converts to int. i could of used Convert.ToInt32
+
+
+            while (num >= 1) //if it is 1 
+            {
+                div = num / 2; //dividing each time then gives this num to n so it can repeat
+                str = str + (num % 2).ToString(); //adding binary form onto str
+                num = div; //making n = k to so we can get next num
+            }
+
+            for (int i = str.Length -1; i >= 0; i--) //Going down from list so it can be rearranged
+            {
+                bin = bin + str[i]; //i -1 because array index starts from 0. e.g. 1652 is 4 numbers 
+                                    // but in array form it is 3 so we need to 4-1 to make it 3
+            }
+
+            Console.WriteLine(bin);
+            Console.ReadLine();
+
+        }
+    }
+}
